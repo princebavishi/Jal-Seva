@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: radial-gradient(circle at top, #ecfeff 0, #f9fafb 40%, #e0f2fe 100%);
+}
+
+.float-anim {
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.water-bg {
+  position: relative;
+  overflow: hidden;
+}
+.water-bg::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 120px;
+  background: radial-gradient(circle at 10% 10%, #38bdf8 0, transparent 40%),
+              radial-gradient(circle at 90% 0%, #0ea5e9 0, transparent 50%),
+              radial-gradient(circle at 50% 120%, #22c55e 0, transparent 60%);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-card {
+  position: relative;
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1px;
+  background-image: linear-gradient(135deg, #0ea5e9, #22c55e, #f97316);
+}
+.hero-card-inner {
+  border-radius: 1.4rem;
+  background: linear-gradient(to bottom right, #f9fafb, #e0f2fe);
+}
+
+.glass-badge {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.btn-main {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-main:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.35);
+}
