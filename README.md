@@ -22,8 +22,34 @@ npm run build
 
 Output is in `dist/`.
 
-## Deploy (GitHub Pages)
+## Deploy to GitHub Pages
 
-The repo is set up for GitHub Pages. After pushing to `main`, enable Pages in the repo **Settings → Pages** and choose **GitHub Actions** as the source. The workflow will build and deploy on each push.
+### 1. Push code to GitHub
 
-Site URL: `https://princebavishi.github.io/Jal-Seva/`
+```bash
+cd "c:\Users\Prince\Downloads\project of feb\jalSeva"
+
+git init
+git add .
+git commit -m "Deploy React site to GitHub Pages"
+git branch -M main
+git remote add origin https://github.com/princebavishi/Jal-Seva.git
+git push -u origin main
+```
+
+(If the repo already exists and you only need to push: `git add .` → `git commit -m "Update"` → `git push origin main`.)
+
+### 2. Enable GitHub Pages
+
+1. Open **https://github.com/princebavishi/Jal-Seva**
+2. Go to **Settings** → **Pages**
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**
+4. Save
+
+### 3. Wait for deployment
+
+- Go to the **Actions** tab and wait for **Deploy to GitHub Pages** to finish (green check).
+- Your site will be live at: **https://princebavishi.github.io/Jal-Seva/**
+
+- Home: `https://princebavishi.github.io/Jal-Seva/#/`
+- Registration: `https://princebavishi.github.io/Jal-Seva/#/register`
